@@ -1,21 +1,21 @@
-
+import {Link} from 'react-router-dom'
 const Navbar = () => {
   return (
     <nav className="bg-base-100 shadow-sm">
       <div className="navbar  container mx-auto">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">ByteBlaze</a>
+          <Link to={'/'} className="btn btn-ghost text-xl">ByteBlaze</Link>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1 flex items-center">
             <li>
-              <a>Home</a>
+              <Link to={'/'}>Home</Link>
             </li>
             <li>
-              <a>Blogs</a>
+              <Link to={'/blogs'}>Blogs</Link>
             </li>
             <li>
-              <a>Bookmarks</a>
+              <Link to={'bookmarks'}>Bookmarks</Link>
             </li>
             <li className="">
               <label className="swap swap-rotate">
