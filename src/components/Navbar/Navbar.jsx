@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 const Navbar = () => {
   return (
-    <nav className="bg-base-100 shadow-sm">
+    <nav className="bg-base-100 shadow-lg sticky top-0 z-10 w-full">
       <div className="navbar  container mx-auto">
         <div className="flex-1">
           <Link to={'/'} className="btn btn-ghost text-xl">ByteBlaze</Link>

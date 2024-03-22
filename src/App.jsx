@@ -18,6 +18,7 @@ const App = () => {
         },
         {
           path: "/blogs",
+          loader:()=> fetch('https://dev.to/api/articles') ,
           element: <Blogs />,
         },
         {
