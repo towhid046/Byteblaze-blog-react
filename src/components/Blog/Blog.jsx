@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 const Blog = ({ blog }) => {
-  const { social_image, description, title } = blog;
+  const { social_image, description, id, title } = blog;
   return (
-    <div className="p-4 border-2 hover:border-info cursor-pointer transition hover:scale-105">
+    <Link to={`/blogs/${id}`} className="p-4 border-2 hover:border-info cursor-pointer transition hover:scale-105">
       <div>
         <img className="rounded-lg w-full" src={social_image} alt="" />
       </div>
@@ -14,7 +15,7 @@ const Blog = ({ blog }) => {
         </p>
         <p>{description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

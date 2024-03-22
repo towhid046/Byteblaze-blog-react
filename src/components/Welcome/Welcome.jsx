@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Welcome = () => {
   return (
     <div className=" text-center h-[82vh] flex flex-col pt-28 pb-5 justify-between">
@@ -9,8 +11,8 @@ const Welcome = () => {
             saepe veritatis numquam voluptas sapiente ducimus vel fuga tempore
           </p>
           <div className="flex justify-center gap-5">
-            <button className="btn btn-info">Read Blogs</button>
-            <button className="btn btn-info">Bookmarks</button>
+            <Link to={'/blogs'} className="btn btn-info">Read Blogs</Link>
+            <Link to={'/bookmarks'} className="btn btn-info">Bookmarks</Link>
           </div>
         </div>
       </div>
