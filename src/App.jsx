@@ -8,6 +8,7 @@ import BlogDetails from "./components/BlogDetails/BlogDetails";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SignUp from "./pages/SignUp/SignUp";
 
 const App = () => {
   const [bookmarks, setBookmarks] = useState([]);
@@ -53,6 +54,10 @@ const App = () => {
           path: "/bookmarks",
           element: <Bookmarks handelRemoveBookmark={handelRemoveBookmark} bookmarks={bookmarks} />,
         },
+        {
+          path: '/sign-up',
+          element: <SignUp/>
+        }
       ],
     },
   ]);

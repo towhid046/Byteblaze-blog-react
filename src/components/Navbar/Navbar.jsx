@@ -1,23 +1,46 @@
-import {Link} from 'react-router-dom'
+import { Link, NavLink } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
+
 const Navbar = () => {
   return (
     <nav className="bg-base-100 shadow-lg sticky top-0 z-10 w-full">
       <div className="navbar  container mx-auto">
         <div className="flex-1">
-          <Link to={'/'} className="btn btn-ghost text-xl">ByteBlaze</Link>
+          <Link to={"/"} className="btn btn-ghost text-xl">
+            ByteBlaze
+          </Link>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal px-1 flex items-center">
+          <ul className="menu menu-horizontal px-1 flex items-center gap-2">
             <li>
-              <Link to={'/'}>Home</Link>
+              <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
-              <Link to={'/blogs'}>Blogs</Link>
+              <NavLink to={"/blogs"}>Blogs</NavLink>
             </li>
             <li>
-              <Link to={'bookmarks'}>Bookmarks</Link>
+              <NavLink to={"bookmarks"}>Bookmarks</NavLink>
             </li>
-            <li className="">
+            <div className="dropdown dropdown-end ml-4">
+              <div className="text-2xl" tabIndex={0} role="button">
+                <CgProfile />
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">Profile</a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  <Link to={"/sign-up"}>Sing Up</Link>
+                </li>
+              </ul>
+            </div>
+            <li className=" fixed bottom-3 right-3">
               <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}
                 <input
