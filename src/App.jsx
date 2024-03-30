@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SignUp from "./pages/SignUp/SignUp";
 
+
 const App = () => {
   const [bookmarks, setBookmarks] = useState([]);
 

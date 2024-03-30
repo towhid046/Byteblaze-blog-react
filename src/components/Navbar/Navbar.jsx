@@ -1,7 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
+import { useContext } from "react";
+import { UserContext } from "./../MainContext/MainContext";
 
 const Navbar = () => {
+  const { user, handelSingOut } = useContext(UserContext);
+  const userImg = user?.user?.photoURL;
+
   return (
     <nav className="bg-base-100 shadow-lg sticky top-0 z-10 w-full">
       <div className="navbar  container mx-auto">
@@ -22,8 +27,16 @@ const Navbar = () => {
               <NavLink to={"bookmarks"}>Bookmarks</NavLink>
             </li>
             <div className="dropdown dropdown-end ml-4">
-              <div className="text-2xl" tabIndex={0} role="button">
-                <CgProfile />
+              <div className="text-[28px]" tabIndex={0} role="button">
+                {userImg ? (
+                  <img
+                    className="w-8 rounded-full"
+                    src={userImg}
+                    alt="User Img"
+                  />
+                ) : (
+                  <CgProfile />
+                )}
               </div>
               <ul
                 tabIndex={0}
@@ -36,7 +49,11 @@ const Navbar = () => {
                   <a>Settings</a>
                 </li>
                 <li>
-                  <Link to={"/sign-up"}>Sing Up</Link>
+                  {user ? (
+                    <Link onClick={handelSingOut}>Sing Out</Link>
+                    ) : (
+                    <Link to={"/sign-up"}>Sing In</Link>
+                  )}
                 </li>
               </ul>
             </div>
